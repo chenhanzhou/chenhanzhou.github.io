@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>考场vim使用指南 | Gridea</title>
+<meta name="description" content="MOTB的小窝">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://chenhanzhou.github.io/favicon.ico?v=1603621252624">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://chenhanzhou.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://chenhanzhou.github.io">
+        <img class="avatar" src="https://chenhanzhou.github.io/images/avatar.png?v=1603621252624" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://chenhanzhou.github.io">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">考场vim使用指南</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-10-25</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://chenhanzhou.github.io/tag/star/">
+                    精选
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <h1 id="哦我们神圣的vim">哦，我们神圣的vim</h1>
+<h1 id="用起来简直赛神仙">用起来简直赛神仙！</h1>
+<h1 id="完爆那难用的guide">完爆那难用的guide</h1>
+<h1 id="完爆那功能过于繁杂的emacs">完爆那功能过于繁杂的EMACS</h1>
+<h1 id="vim我们的vim我们的vim">vim！我们的vim！我们的VIM！</h1>
+<p>大雾</p>
+<p><s>但是我就是喜欢用vim啊</s></p>
+<p>vim是附着在noilinux终端里的一个文本编辑器，功能很是强大，但是一开始看起来却是个弱鸡</p>
+<h2 id="1进入vim">1，进入vim</h2>
+<p>noilinux桌面的左上角是应用程序，进入应用程序-附件，就可以找到终端了。</p>
+<p>通过终端，我们可以操控电脑进行一些操作，一些是可以直接在GUI中完成的，一些是底层操作，只能在终端里用。vim是附着于终端的，你很难用其他方式打开它。</p>
+<p>vim指令格式：</p>
+<p>vim [你要打开/创建的文件]</p>
+<p>在这里比如说按照我写的堆的模板来说的话，我就输入<code>vim heap.cpp</code></p>
+<h2 id="接下来让我们进入神圣的vim"><s>接下来让我们进入神圣的vim</s></h2>
+<h2 id="2使用vim">2，使用vim</h2>
+<p>vim有一个配置文件，默认情况下是空的。但是通过映射和其他一系列操作可以搞成一个极其优秀的IDE。但是在考场上，也没必要搞得那么好了。</p>
+<p>当然在家里使用时就可以对自己好一点~</p>
+<p>在终端输入vim ～/. vimrc，然后输入</p>
+<pre><code>set nu
+set tabstop=4 
+imap [ []&lt;ESC&gt;i 
+imap ( ()&lt;ESC&gt;i 
+imap { {}&lt;ESC&gt;i
+imap &quot; &quot;&quot;&lt;ESC&gt;i
+imap ' ''&lt;ESC&gt;i
+</code></pre>
+<p>这样，手感会好很多。</p>
+<p>进入vim的界面以后，输入I，你会发现vim的最底下变成了插入。接下来就可以开始输入了。注意vim没有自动缩进，想要设置的可以上网搜一下。</p>
+<h2 id="3退出vim">3，退出vim</h2>
+<p>退出vim</p>
+<h3 id="绝对不能直接关闭">绝对不能直接关闭！</h3>
+<p>直接关闭，vim不会自动保存，所以你的文件就这么丢了。应该像这样：</p>
+<p>[ESC][:][w][q]</p>
+<p>ESC可以进入底部命令行</p>
+<p>冒号代表这是一条命令</p>
+<p>w是保存</p>
+<p>q是退出</p>
+<p>像这样，你的文件就被保存啦~</p>
+<p>另外可以随时输入[ESC][:][w]来保存</p>
+<h2 id="4编译运行">4，编译运行</h2>
+<p>g++ [文件名]</p>
+<p>编译完成以后，可以使用mv a.out [你想要的文件名].out来改名，然后使用./新文件名.out运行，这些都是常识了。</p>
+<h2 id="5总结">5，总结</h2>
+<p>vim功能强大，但是门槛略高，同时它也是一个非常有意思的编辑器。</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://chenhanzhou.github.io/post/xiao-hei-wu-tong-guan-gong-lue/">
+              <h3 class="post-title">
+                下一篇：小黑屋通关攻略
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">MOTB的小窝</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://chenhanzhou.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
